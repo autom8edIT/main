@@ -1,0 +1,19 @@
+name: release
+on:
+  push:
+    tags: ['v*.*.*']
+jobs:
+  build:
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          lfs: true
+      - name: Build + package
+        shell: pwsh
+        run: |
+          # your build steps
+          Compress-Archive -Path .\apps\Autom8ed\dist\* -DestinationPath autom8ed.zip
+      - uses: softprops/action-gh-release@v2
+        with:
+          files: autom8ed.zip
