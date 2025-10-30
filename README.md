@@ -1,5 +1,9 @@
 # autom8ed: main
 
+![CI](https://github.com/autom8edIT/main/actions/workflows/CI.yml/badge.svg)
+![Gitleaks](https://github.com/autom8edIT/main/actions/workflows/gitleaks.yml/badge.svg)
+![Release](https://github.com/autom8edIT/main/actions/workflows/release.yaml/badge.svg)
+
 This is the central hub. If you only want binaries, go to **Releases**.  
 If you want to build or tweak, start here:
 
