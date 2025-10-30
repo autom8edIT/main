@@ -1,0 +1,19 @@
+name: CI
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+
+jobs:
+  build:
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          lfs: true          # <-- this is the bit you asked about
+          fetch-depth: 0     # good if tools need full history (e.g., gitleaks)
+
+      - name: Show LFS status
+        run: |
+          git lfs version
+          git lfs ls-files
