@@ -1,7 +1,36 @@
+# --- Line endings: make LF the default everywhere ---
+* text=auto eol=lf
+
+# Windows scripts that must be CRLF
+*.bat text eol=crlf
+*.cmd text eol=crlf
+
+# PowerShell: LF works in pwsh and classic Windows PowerShell, plays nice with CI/WSL
+*.ps1 text eol=lf
+
+# --- Git LFS: KEEP THESE (from your git lfs track) ---
+*.iso filter=lfs diff=lfs merge=lfs -text
 *.wim filter=lfs diff=lfs merge=lfs -text
 *.zip filter=lfs diff=lfs merge=lfs -text
-*.7z filter=lfs diff=lfs merge=lfs -text
+*.7z  filter=lfs diff=lfs merge=lfs -text
 *.exe filter=lfs diff=lfs merge=lfs -text
 *.dll filter=lfs diff=lfs merge=lfs -text
 *.pdb filter=lfs diff=lfs merge=lfs -text
-*.iso filter=lfs diff=lfs merge=lfs -text
+
+# --- Mark other obvious binaries non-text (not LFS unless you decide later) ---
+*.png -text
+*.jpg -text
+*.jpeg -text
+*.gif -text
+*.ico -text
+*.pdf -text
+*.tar -text
+*.gz  -text
+*.so  -text
+*.dylib -text
+
+# Optional niceties
+*.md  text eol=lf
+*.yml text eol=lf
+*.yaml text eol=lf
+*.json text eol=lf
