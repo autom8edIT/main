@@ -1,8 +1,10 @@
 # autom8ed: main
 
-![CI](https://github.com/autom8edIT/main/actions/workflows/CI.yml/badge.svg)
-![Gitleaks](https://github.com/autom8edIT/main/actions/workflows/gitleaks.yml/badge.svg)
-![Release](https://github.com/autom8edIT/main/actions/workflows/release.yaml/badge.svg)
+→ **[Releases](../../releases)** for binaries.
+
+[![CI](https://github.com/autom8edIT/main/actions/workflows/CI.yml/badge.svg)](https://github.com/autom8edIT/main/actions/workflows/CI.yml)
+[![Gitleaks](https://github.com/autom8edIT/main/actions/workflows/gitleaks.yml/badge.svg)](https://github.com/autom8edIT/main/actions/workflows/gitleaks.yml)
+[![Release](https://github.com/autom8edIT/main/actions/workflows/release.yaml/badge.svg)](https://github.com/autom8edIT/main/actions/workflows/release.yaml)
 
 This is the central hub. If you only want binaries, go to **Releases**.  
 If you want to build or tweak, start here:
@@ -14,6 +16,7 @@ If you want to build or tweak, start here:
 - **/docs** – user + dev docs (published via GitHub Pages)
 
 ## Quick start
+Requires: Windows 11, PowerShell 7+, Git LFS.
 - Windows: `.\scripts\powershell\Setup-Env.ps1 -Force`
 - Build ISO: `.\iso-builder\Build-MinISO.ps1 -Preset Minimal`
 
