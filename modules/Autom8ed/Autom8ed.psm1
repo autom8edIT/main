@@ -1,9 +1,15 @@
-# Autom8ed.psm1
 Set-StrictMode -Version Latest
-$ErrorActionPreference = "Stop"
+$ErrorActionPreference = 'Stop'
 
-# dot-source functions
-Get-ChildItem -Path $PSScriptRoot\public -Filter *.ps1 | ForEach-Object { . $_.FullName }
-Get-ChildItem -Path $PSScriptRoot\private -Filter *.ps1 | ForEach-Object { . $_.FullName }
+$pub = Join-Path $PSScriptRoot 'public'
+$pri = Join-Path $PSScriptRoot 'private'
+
+if (Test-Path $pub) {
+    Get-ChildItem -Path $pub -Filter *.ps1 -File | ForEach-Object { . $_.FullName }
+}
+
+if (Test-Path $pri) {
+    Get-ChildItem -Path $pri -Filter *.ps1 -File | ForEach-Object { . $_.FullName }
+}
 
 Export-ModuleMember -Function * -Alias *
